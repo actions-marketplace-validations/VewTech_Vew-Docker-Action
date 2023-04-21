@@ -20,11 +20,9 @@ inputs:
   registry-user:
     description: The username used for the login.
     required: true
-    default: ${{ github.actor }}
   registry-password:
     description: The password used for the login to the registry.
     required: true
-    default: ${{ GITHUB_TOKEN }}
     
 jobs:
   build-and-publish:
