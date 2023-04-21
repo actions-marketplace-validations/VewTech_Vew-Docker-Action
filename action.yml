@@ -1,4 +1,5 @@
 name: VewDockerAction
+description: Easily builds and publishes Docker images
 
 on:
   release:
