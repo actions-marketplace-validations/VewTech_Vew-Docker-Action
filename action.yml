@@ -1,5 +1,11 @@
 name: VewDockerAction
 
+on:
+  release:
+    types: [published]
+  pull_request:
+    branches: [ "master" ]
+    
 env:
   CONTEXT: .
   DOCKERFILE: Dockerfile
