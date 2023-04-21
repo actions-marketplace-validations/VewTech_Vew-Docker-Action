@@ -26,13 +26,10 @@ inputs:
     
 jobs:
   build-and-publish:
-  
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
     - name: Build Docker image
       uses: docker/build-push-action@v2
       if: github.event_name != 'release'
@@ -41,7 +38,6 @@ jobs:
         file: ${{ inputs.dockerfile }}
         push: false
         tags: ${{ inputs.image_name }}:${{ github.sha }}
-
     - name: Login to Registry
       if: github.event_name == 'release'
       uses: docker/login-action@v1
@@ -49,7 +45,6 @@ jobs:
         registry: ${{ inputs.registry }}
         username: ${{ inputs.registry-user }}
         password: ${{ inputs.registry-password }}
-        
     - name: Build and Push Docker image
       if: github.event_name == 'release'
       uses: docker/build-push-action@v2
