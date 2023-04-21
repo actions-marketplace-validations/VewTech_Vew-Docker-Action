@@ -1,3 +1,5 @@
+name: VewDockerAction
+
 env:
   CONTEXT: .
   DOCKERFILE: Dockerfile
