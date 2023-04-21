@@ -2,7 +2,7 @@ name: VewDockerAction
 description: Easily builds and publishes Docker images. See readme.md at VewTech/Vew-Docker-Action
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       context:
         description: The context used for the "docker build" command.
